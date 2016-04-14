@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Chrisoft::Static Home</title>
+<link rel="icon" href="./favicon.png">
+<style type="text/css">
+</style>
+<script type="text/javascript">
+function changeImage(img){
+	document.getElementById('aqt').src=img;
+}
+function changeTheme(thm){
+	document.cookie=thm;
+}
+link=document.createElement("link");
+linka=document.createElement("link");
+switch(document.cookie)
+{
+	case "day":
+		link.href="common.css";
+		linka.href="index-day.css";
+	break;
+	case "night":
+		link.href="common-night.css";
+		linka.href="index-night.css";
+	break;
+	case "auto":
+	default:
+		var c=new Date();
+		if(c.getHours()>=6&&c.getHours()<18)
+		{
+			link.href = "common.css";
+			linka.href="index-day.css";
+		}
+		else
+		{
+			link.href = "common-night.css";
+			linka.href="index-night.css";
+		}
+	break;
+}
+link.type = "text/css";
+link.rel = "stylesheet";
+link.media = "screen,print";
+document.getElementsByTagName("head")[0].appendChild(link);
+
+linka.type = "text/css";
+linka.rel = "stylesheet";
+linka.media = "screen,print";
+document.getElementsByTagName("head")[0].appendChild(linka);
+function checkmainsite()
+{
+	var img=document.createElement('img');
+    img.src='https://chrisoft.org/koishi_norm.png';
+    img.onload=function(){window.location='https://chrisoft.org';};
+    img.onerror=function(){};
+    img.style.display='none';
+    document.body.appendChild(img);
+}
+</script>
+</head>
+<body>
+<table style="margin:auto;width:66%;border-spacing:0px;" id="desktoptab">
+<tr>
+	<td colspan="3" class="CTitle">
+	<span style="font-size:2em;"><a href="./">Chrisoft</a>::<a href="./">Static Home</a></span>
+	</td>
+	<td><div class="TText"><a href="./" onclick="changeTheme('day')">day</a>&nbsp;<a href="./" onclick="changeTheme('night')">night</a>&nbsp;<a href="./" onclick="changeTheme('auto')">auto</a></div></td>
+</tr>
+<tr class="TText" id="header">
+	<td style="width:25%;">Active Projects</td>
+	<td style="width:25%;">Inactive Projects</td>
+	<td style="width:25%;">Blog</td>
+	<td style="width:25%;">Libraries</td>
+</tr>
+<tr class="TText">
+	<td><a href="https://github.com/chirs241097/bullet-lab-remix">Bullet Lab Remix</a></td>
+	<td><s>Ballance Remix</s></td>
+	<td><s>Development Blog</s></td>
+	<td><s>Music Library</s></td>
+</tr>
+<tr class="TText">
+	<td><a href="https://github.com/BearKidsTeam/SMELT">SMELT</a></td>
+	<td><s>Full list</s></td>
+	<td><s>Nonsense Blog</s></td>
+	<td><s>Picture Library</s></td>
+</tr>
+<tr class="TText">
+	<td><a href="https://github.com/chirs241097/QMidiPlayer">QMidiPlayer</a></td>
+	<td></td>
+	<td></td>
+	<td><a href="https://github.com/chirs241097">Code Library</a></td>
+</tr>
+<tr class="TText">
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td colspan="4" class="TText" style="font-size:1.2em;" id="lower">
+	This page exists because my laptop cannot serve 24/7...<br>
+	Items with strikethrough are only available on the <a href="https://chrisoft.org">main site</a>.<br>
+	Best viewed if you have more than 1000 pixels (at ~80dpi) in width.<br>
+	<span style="font-size:0.8em;">This site uses cookies to <s>improve your visiting experience</s> remember the theme you use.</span>
+	</td>
+</tr>
+<tr>
+	<td colspan="4" class="TText" style="text-align:center;">Copyright Chrisoft 2016&nbsp;&nbsp;<a href="https://chrisoft.org">chrisoft.org</a></td>
+</tr>
+</table>
+</body>
+</html>
